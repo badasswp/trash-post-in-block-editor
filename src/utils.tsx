@@ -21,7 +21,7 @@ export const trashPost = async () => {
         path: '/tpbe/v1/trash',
         method: 'POST',
         data: {
-          id: postID
+          id: getCurrentPostId()
         },
       }
     );
