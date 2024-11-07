@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
-import { Fragment, useState } from '@wordpress/element';
-import { registerPlugin } from '@wordpress/plugins';
 import { PluginSidebar } from '@wordpress/edit-post';
+import { registerPlugin } from '@wordpress/plugins';
+import { Fragment, useState } from '@wordpress/element';
 import { Modal, PanelBody, Button } from '@wordpress/components';
 
 import { trashPost } from './utils';
