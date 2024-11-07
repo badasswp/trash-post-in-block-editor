@@ -57,7 +57,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 		[
 			'post_type' => get_post_type()
 		],
-		sprintf( '%s/%s', trailingslashit( get_admin_url() ), 'edit.php' )
+		sprintf( '%s/%s', untrailingslashit( get_admin_url() ), 'edit.php' )
 	);
 
 	wp_localize_script(
