@@ -1,10 +1,10 @@
 import { __ } from '@wordpress/i18n';
-import { select } from '@wordpress/data';
-import { Fragment } from '@wordpress/element';
+import { Fragment, useState } from '@wordpress/element';
 import { registerPlugin } from '@wordpress/plugins';
 import { PluginSidebar } from '@wordpress/edit-post';
-import { PanelBody, Button } from '@wordpress/components';
-import apiFetch from '@wordpress/api-fetch';
+import { Modal, PanelBody, Button } from '@wordpress/components';
+
+import { trashPost } from './utils';
 
 /**
  * Trash Post In Block Editor.
