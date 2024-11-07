@@ -79,7 +79,7 @@ add_action( 'init', function() {
 add_action( 'rest_api_init', function() {
 	register_rest_route(
 		'tpbe/v1',
-		'/import',
+		'/trash',
 		[
 			'methods'             => \WP_REST_Server::CREATABLE,
 			'callback'            => __NAMESPACE__ . '\trash_post',
