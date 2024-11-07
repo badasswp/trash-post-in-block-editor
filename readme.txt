@@ -24,8 +24,8 @@ Trash Post in Block Editor.
 
 == Screenshots ==
 
-1. Trash Post - Delete Post from within the WP Block Editor quickly.
-2. Yes/No Prompt - Delete Post from within the WP Block Editor quickly.
+1. Trash Post - Delete Post from within the WP Block Editor.
+2. Yes/No Prompt - Delete Post from within the WP Block Editor.
 
 == Changelog ==
 
