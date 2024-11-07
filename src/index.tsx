@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
+import { select } from '@wordpress/data';
 import { Fragment } from '@wordpress/element';
-import { PanelBody, Button } from '@wordpress/components';
 import { registerPlugin } from '@wordpress/plugins';
 import { PluginSidebar } from '@wordpress/edit-post';
-import { select } from '@wordpress/data';
+import { PanelBody, Button } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 
 /**
