@@ -33,7 +33,7 @@ const TrashPostInBlockEditor = () => {
         }
       );
 
-      window.location.href = 'https://google.com';
+      window.location.href = `${tpbe.url}`
     } catch (e) {
       console.log(e);
     }
