@@ -3,6 +3,8 @@ import { Fragment } from '@wordpress/element';
 import { PanelBody, Button } from '@wordpress/components';
 import { registerPlugin } from '@wordpress/plugins';
 import { PluginSidebar } from '@wordpress/edit-post';
+import { select } from '@wordpress/data';
+import apiFetch from '@wordpress/api-fetch';
 
 /**
  * Trash Post In Block Editor.
@@ -15,6 +17,28 @@ import { PluginSidebar } from '@wordpress/edit-post';
  * @returns {JSX.Element}
  */
 const TrashPostInBlockEditor = () => {
+  const { getCurrentPostId } = select('core/editor');
+
+  const trashPost = async () => {
+    const postID = getCurrentPostId();
+
+    try {
+      await apiFetch(
+        {
+          path: '/tpbe/v1/trash',
+          method: 'POST',
+          data: {
+            id: postID
+          },
+        }
+      );
+
+      window.location.href = 'https://google.com';
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
     <Fragment>
       <PluginSidebar
@@ -26,7 +50,7 @@ const TrashPostInBlockEditor = () => {
           <div id="tpbe">
             <Button
               variant="primary"
-              onClick={ () => {} }
+              onClick={trashPost}
             >
               { __( 'Trash Post', 'trash-post-in-block-editor' ) }
             </Button>
