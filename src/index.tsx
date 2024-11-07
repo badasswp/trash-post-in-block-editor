@@ -17,27 +17,7 @@ import { trashPost } from './utils';
  * @returns {JSX.Element}
  */
 const TrashPostInBlockEditor = () => {
-  const { getCurrentPostId } = select('core/editor');
-
-  const trashPost = async () => {
-    const postID = getCurrentPostId();
-
-    try {
-      await apiFetch(
-        {
-          path: '/tpbe/v1/trash',
-          method: 'POST',
-          data: {
-            id: postID
-          },
-        }
-      );
-
-      window.location.href = `${tpbe.url}`
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  const [ isModalVisible, setIsModalVisible ] = useState(false);
 
   return (
     <Fragment>
@@ -50,13 +30,36 @@ const TrashPostInBlockEditor = () => {
           <div id="tpbe">
             <Button
               variant="primary"
-              onClick={trashPost}
+              onClick={ () => setIsModalVisible(true) }
             >
               { __( 'Trash Post', 'trash-post-in-block-editor' ) }
             </Button>
           </div>
         </PanelBody>
       </PluginSidebar>
+      {
+        isModalVisible && (
+          <Modal
+            title={ __( 'Trash Post', 'search-replace-for-block-editor' ) }
+            onRequestClose={ () => setIsModalVisible(false) }
+            className="search-replace-modal"
+          >
+            <p>Are you sure you want to delete this Post?</p>
+            <Button
+              variant="primary"
+              onClick={trashPost}
+            >
+              { __( 'Yes' ) }
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={ () => setIsModalVisible(false) }
+            >
+              { __( 'No' ) }
+            </Button>
+          </Modal>
+        )
+      }
     </Fragment>
   );
 };
