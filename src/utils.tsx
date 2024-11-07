@@ -1,5 +1,5 @@
-import { select, dispatch } from '@wordpress/data';
 import apiFetch from '@wordpress/api-fetch';
+import { select, dispatch } from '@wordpress/data';
 
 /**
  * Trash Post
