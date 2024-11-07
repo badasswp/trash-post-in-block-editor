@@ -53,18 +53,16 @@ add_action( 'enqueue_block_editor_assets', function() {
 		plugin_dir_path( __FILE__ ) . 'languages'
 	);
 
-	$post_url = add_query_arg(
-		[
-			'post_type' => get_post_type()
-		],
-		sprintf( '%s/%s', untrailingslashit( get_admin_url() ), 'edit.php' )
-	);
-
 	wp_localize_script(
 		'trash-post-in-block-editor',
 		'tpbe',
 		[
-			'url' => $post_url,
+			'url' => add_query_arg(
+				[
+					'post_type' => get_post_type()
+				],
+				sprintf( '%s/%s', untrailingslashit( get_admin_url() ), 'edit.php' )
+			),
 		]
 	);
 } );
