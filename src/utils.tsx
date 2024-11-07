@@ -1,4 +1,4 @@
-import { select } from '@wordpress/data';
+import { select, dispatch } from '@wordpress/data';
 import apiFetch from '@wordpress/api-fetch';
 
 /**
@@ -13,7 +13,7 @@ import apiFetch from '@wordpress/api-fetch';
  */
 export const trashPost = async () => {
   const { getCurrentPostId } = select('core/editor');
-  const postID = getCurrentPostId();
+  const { createWarningNotice } = dispatch('core/notices') as any;
 
   try {
     await apiFetch(
@@ -28,6 +28,6 @@ export const trashPost = async () => {
 
     window.location.href = `${tpbe.url}`
   } catch (e) {
-    console.log(e);
+    createWarningNotice(e);
   }
 }
