@@ -47,18 +47,20 @@ const TrashPostInBlockEditor = () => {
             className="trash-post-modal"
           >
             <p>Are you sure you want to delete this Post?</p>
-            <Button
-              variant="primary"
-              onClick={trashPost}
-            >
-              { __( 'Yes' ) }
-            </Button>
-            <Button
-              variant="secondary"
-              onClick={ () => setIsModalVisible(false) }
-            >
-              { __( 'No' ) }
-            </Button>
+            <div id="trash-post-modal__button-group">
+              <Button
+                variant="primary"
+                onClick={trashPost}
+              >
+                { __( 'Yes' ) }
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={ () => setIsModalVisible(false) }
+              >
+                { __( 'No' ) }
+              </Button>
+            </div>
           </Modal>
         )
       }
