@@ -1,0 +1,15 @@
+#trash-post-modal {
+	&__button-group {
+		display: flex;
+		gap: 10px;
+
+
+		button {
+			margin: 0;
+			width: 50%;
+			justify-content: center;
+			width: calc(50% - 5px);
+			box-sizing: border-box;
+		}
+	}
+}

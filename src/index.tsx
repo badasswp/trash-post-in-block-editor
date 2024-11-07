@@ -6,6 +6,8 @@ import { Modal, PanelBody, Button } from '@wordpress/components';
 
 import { trashPost } from './utils';
 
+import './styles/app.scss';
+
 /**
  * Trash Post In Block Editor.
  *
@@ -42,7 +44,7 @@ const TrashPostInBlockEditor = () => {
           <Modal
             title={ __( 'Trash Post', 'search-replace-for-block-editor' ) }
             onRequestClose={ () => setIsModalVisible(false) }
-            className="search-replace-modal"
+            className="trash-post-modal"
           >
             <p>Are you sure you want to delete this Post?</p>
             <Button
