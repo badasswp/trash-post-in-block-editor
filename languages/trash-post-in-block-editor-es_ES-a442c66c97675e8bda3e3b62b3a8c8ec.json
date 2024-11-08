@@ -1,0 +1,30 @@
+{
+  "translation-revision-date": "2024-08-29 02:16+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "es_ES\\n",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Trash Post in Block Editor": [
+        "Publicación de papelera en el editor de bloques"
+      ],
+      "Trash Post": [
+        "Puesto de basura"
+      ],
+      "Are you sure you want to delete this Post?": [
+        "Estás seguro de que quieres eliminar esta publicación?"
+      ],
+      "Yes": [
+        "Sí"
+      ],
+      "No": [
+        "No"
+      ]
+    }
+  }
+}
