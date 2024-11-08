@@ -20,7 +20,19 @@ Trash Post in Block Editor.
 
 == Description ==
 
--
+This plugin provides a quick way to <strong>delete</strong> or <strong>trash</strong> a Post from <strong>within</strong> the <strong>Block Editor</strong>. Previously, the only way to achieve this required a user to exit the article or post before deleting. Not anymore! Now, from the comfort of your Block Editor, you could easily delete the Post you're working on with ease.
+
+= ✨ Getting Started =
+
+Create a new Post or open an existing Post. Locate the 'Trash Post in Block Editor' icon at the <strong>top right</strong> corner of the Block Editor and click on it. The inspector panel shows you a <strong>Trash Post</strong> button where you can click on.
+
+You can get a taste of how this works, by using the [demo](https://tastewp.com/create/NMS/8.0/6.6.2/trash-post-in-block-editor/twentytwentythree?ni=true&origin=wp) link.
+
+= 🔌🎨 Plug and Play or Customize =
+
+The Trash Post in Block Editor plugin is built to work right out of the box. Simply install, activate and start using.
+
+Want to add your personal touch? All of our documentation can be found [here](https://github.com/badasswp/trash-post-in-block-editor).
 
 == Screenshots ==
 
