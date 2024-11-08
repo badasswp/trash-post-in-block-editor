@@ -1,0 +1,30 @@
+{
+  "translation-revision-date": "2024-08-29 02:16+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "hi_IN\\n",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Trash Post in Block Editor": [
+        "ब्लॉक संपादक में कचरा पोस्ट"
+      ],
+      "Trash Post": [
+        "कचरा पोस्"
+      ],
+      "Are you sure you want to delete this Post?": [
+        "क्या आप वाकई इस पोस्ट को हटाना चाहते हैं?"
+      ],
+      "Yes": [
+        "हाँ"
+      ],
+      "No": [
+        "नहीं"
+      ]
+    }
+  }
+}
