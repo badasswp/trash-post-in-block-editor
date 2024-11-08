@@ -46,7 +46,9 @@ const TrashPostInBlockEditor = () => {
             onRequestClose={ () => setIsModalVisible(false) }
             className="trash-post-modal"
           >
-            <p>Are you sure you want to delete this Post?</p>
+            <p style={{textAlign: 'center'}}>
+              { __( 'Are you sure you want to delete this Post?', 'trash-post-in-block-editor' ) }
+              </p>
             <div id="trash-post-modal__button-group">
               <Button
                 variant="primary"
