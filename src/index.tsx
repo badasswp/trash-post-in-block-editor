@@ -54,13 +54,13 @@ const TrashPostInBlockEditor = () => {
                 variant="primary"
                 onClick={trashPost}
               >
-                { __( 'Yes' ) }
+                { __( 'Yes', 'trash-post-in-block-editor' ) }
               </Button>
               <Button
                 variant="secondary"
                 onClick={ () => setIsModalVisible(false) }
               >
-                { __( 'No' ) }
+                { __( 'No', 'trash-post-in-block-editor' ) }
               </Button>
             </div>
           </Modal>
