@@ -43,7 +43,8 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 == Changelog ==
 
 = 1.0.0 =
-* TBD
+* Added Trash Post feature.
+* Support for Arabic, Danish, Chinese, Hebrew, Hindi, Russian, German, Italian, Croatian, Spanish & French languages.
 * Tested up to WP 6.6.2.
 
 == Contribute ==
