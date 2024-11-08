@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Trash Post in Block Editor\n"
 "POT-Creation-Date: 2024-11-08 13:46+0100\n"
-"PO-Revision-Date: 2024-11-08 16:52+0100\n"
+"PO-Revision-Date: 2024-11-08 16:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -51,7 +51,7 @@ msgstr "لا"
 
 #. Trash Post
 msgid "Trash Post"
-msgstr "سلة المهملات"
+msgstr "حذف المشاركة"
 
 #. Are you sure you want to delete this Post?
 msgid "Are you sure you want to delete this Post?"
