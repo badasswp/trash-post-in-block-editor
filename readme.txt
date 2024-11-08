@@ -38,6 +38,7 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 
 1. Trash Post - Delete Post from within the WP Block Editor.
 2. Yes/No Prompt - Delete Post from within the WP Block Editor.
+3. Inspector Panel - Delete Post button.
 
 == Changelog ==
 
