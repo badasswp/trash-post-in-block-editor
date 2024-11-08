@@ -13,7 +13,7 @@ You can also get the latest version from any of our [release tags](https://githu
 
 This plugin provides a quick way to __delete__ or __trash__ a Post from __within__ the __Block Editor__. Previously, the only way to achieve this required a user to exit the article or post before deleting. Not anymore! Now, from the comfort of your Block Editor, you could easily delete the Post you're working on with ease.
 
-https://github.com/user-attachments/assets/f02442d8-ff46-49d3-9bb7-9907b8d7174b
+<video width="100%" src="https://github.com/user-attachments/assets/f02442d8-ff46-49d3-9bb7-9907b8d7174b"/>
 
 ## Development
 
