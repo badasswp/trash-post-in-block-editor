@@ -1,0 +1,30 @@
+{
+  "translation-revision-date": "2024-08-29 02:16+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "he_IL\\n",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Trash Post in Block Editor": [
+        "פוסט זבל בעורך הבלוקים"
+      ],
+      "Trash Post": [
+        "מחק פוסט"
+      ],
+      "Are you sure you want to delete this Post?": [
+        "האם אתה בטוח שברצונך למחוק את הפוסט הזה?"
+      ],
+      "Yes": [
+        "כֵּן"
+      ],
+      "No": [
+        "לֹא"
+      ]
+    }
+  }
+}
