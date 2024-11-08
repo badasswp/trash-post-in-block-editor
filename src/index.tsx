@@ -42,7 +42,7 @@ const TrashPostInBlockEditor = () => {
       {
         isModalVisible && (
           <Modal
-            title={ __( 'Trash Post', 'search-replace-for-block-editor' ) }
+            title={ __( 'Trash Post', 'trash-post-in-block-editor' ) }
             onRequestClose={ () => setIsModalVisible(false) }
             className="trash-post-modal"
           >
