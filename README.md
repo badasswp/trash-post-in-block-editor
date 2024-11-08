@@ -1,7 +1,7 @@
 # trash-post-in-block-editor
 Delete a Post from within the WP Block Editor.
 
-<img width="351" alt="screenshot-1" style="border: 1px solid #AAA !important;" src="https://github.com/user-attachments/assets/7d265444-8c32-45e9-a399-1added697403">
+<img width="446" alt="trash-post-in-block-editor" src="https://github.com/user-attachments/assets/909ee6cf-954a-4975-96d8-2210dd33e954">
 
 ## Download
 
