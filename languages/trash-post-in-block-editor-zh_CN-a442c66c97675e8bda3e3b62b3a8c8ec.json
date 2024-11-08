@@ -1,0 +1,30 @@
+{
+  "translation-revision-date": "2024-08-29 02:16+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "zh_CN\\n",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Trash Post in Block Editor": [
+        "区块编辑器中的垃圾桶帖子"
+      ],
+      "Trash Post": [
+        "垃圾场"
+      ],
+      "Are you sure you want to delete this Post?": [
+        "您确定要删除此帖子吗？"
+      ],
+      "Yes": [
+        "是"
+      ],
+      "No": [
+        "否"
+      ]
+    }
+  }
+}
