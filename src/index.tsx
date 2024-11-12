@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { PluginSidebar } from '@wordpress/edit-post';
+import { PluginSidebar } from '@wordpress/editor';
 import { registerPlugin } from '@wordpress/plugins';
 import { Fragment, useState } from '@wordpress/element';
 import { Modal, PanelBody, Button } from '@wordpress/components';
