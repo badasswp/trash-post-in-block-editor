@@ -120,7 +120,7 @@ function trash_post( $request ): \WP_REST_Response {
 	// Get Post ID.
 	$post_id = (int) ( $args['id'] ?? '' );
 
-	//Bail out, if it does NOT exists.
+	// Bail out, if it does NOT exists.
 	if ( ! get_post( $post_id ) ) {
 		return new \WP_Error(
 			'tpbe-bad-request',
