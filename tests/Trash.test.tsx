@@ -44,4 +44,15 @@ describe( 'TrashPostInBlockEditor', () => {
     expect( screen.getByRole( 'button', { name: 'Yes' } ) ).toBeInTheDocument();
     expect( screen.getByRole( 'button', { name: 'No' } ) ).toBeInTheDocument();
   } );
+
+  it( 'calls trashPost function when Yes button is clicked', () => {
+    render( <TrashPostInBlockEditor /> );
+
+    // Open modal and click Yes button.
+    fireEvent.click( screen.getByRole( 'button', { name: 'Trash Post' } ) );
+    fireEvent.click( screen.getByRole( 'button', { name: 'Yes' } ) );
+
+    // Test that trashPost function is called.
+    expect(trashPost).toHaveBeenCalledTimes( 1 );
+  } );
 } );
