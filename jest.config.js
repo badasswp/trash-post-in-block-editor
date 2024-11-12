@@ -12,5 +12,6 @@ module.exports = {
   },
   moduleNameMapper: {
     'uuid': require.resolve('uuid'),
+    '\\.(css|scss)$': 'identity-obj-proxy',
   },
 };
