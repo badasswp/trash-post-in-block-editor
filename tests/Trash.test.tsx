@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import TrashPostInBlockEditor from '../src/index';
@@ -31,5 +31,17 @@ describe( 'TrashPostInBlockEditor', () => {
     // Test if Trash Post button is displayed.
     const trashButton = screen.getByRole( 'button', { name: 'Trash Post' } );
     expect( trashButton ).toBeInTheDocument();
+  } );
+
+  it( 'displays modal when Trash Post button is clicked', () => {
+    render( <TrashPostInBlockEditor /> );
+
+    // Click Trash Post button to open modal.
+    fireEvent.click( screen.getByRole('button', { name: 'Trash Post' } ) );
+
+    // Test that modal content is displayed.
+    expect( screen.getByText( 'Are you sure you want to delete this Post?') ).toBeInTheDocument();
+    expect( screen.getByRole( 'button', { name: 'Yes' } ) ).toBeInTheDocument();
+    expect( screen.getByRole( 'button', { name: 'No' } ) ).toBeInTheDocument();
   } );
 } );
