@@ -25,6 +25,7 @@
     "@wordpress/scripts": "^26.9.0",
     "css-loader": "^6.8.1",
     "file-loader": "^6.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.6.4",
     "jquery": "^3.6.4",
     "jsdom": "^22.1.0",
