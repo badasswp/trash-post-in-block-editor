@@ -3,8 +3,11 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import TrashPostInBlockEditor from '../src/index';
+import { trashPost } from '../src/utils';
 
-const trashPost = jest.fn();
+jest.mock( '../src/utils', () => ( {
+  trashPost: jest.fn(),
+} ) );
 
 jest.mock( '@wordpress/editor', () => ( {
   PluginSidebar: jest.fn( ( { title, children } ) => {
@@ -18,10 +21,6 @@ jest.mock( '@wordpress/editor', () => ( {
 } ) );
 
 describe( 'TrashPostInBlockEditor', () => {
-  beforeEach( () => {
-    trashPost.mockClear();
-  } );
-
   it( 'renders sidebar and Trash Post button', () => {
     const { container } = render( <TrashPostInBlockEditor /> );
 
@@ -53,6 +52,6 @@ describe( 'TrashPostInBlockEditor', () => {
     fireEvent.click( screen.getByRole( 'button', { name: 'Yes' } ) );
 
     // Test that trashPost function is called.
-    expect(trashPost).toHaveBeenCalledTimes( 1 );
+    expect( trashPost ).toHaveBeenCalledTimes( 1 );
   } );
 } );
