@@ -73,3 +73,5 @@ const TrashPostInBlockEditor = () => {
 registerPlugin( 'trash-post-in-block-editor', {
   render: TrashPostInBlockEditor,
 } );
+
+export default TrashPostInBlockEditor;
