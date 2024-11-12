@@ -54,4 +54,15 @@ describe( 'TrashPostInBlockEditor', () => {
     // Test that trashPost function is called.
     expect( trashPost ).toHaveBeenCalledTimes( 1 );
   } );
+
+  it( 'closes modal when No button is clicked', () => {
+    render( <TrashPostInBlockEditor /> );
+
+    // Open modal and click No button.
+    fireEvent.click( screen.getByRole( 'button', { name: 'Trash Post' } ) );
+    fireEvent.click( screen.getByRole( 'button', { name: 'No' } ) );
+
+    // Test that modal content is no longer in the document.
+    expect( screen.queryByText( 'Are you sure you want to delete this Post?' ) ).not.toBeInTheDocument();
+  } );
 } );
