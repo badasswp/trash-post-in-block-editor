@@ -42,6 +42,11 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 
 == Changelog ==
 
+= 1.0.1 =
+* Bump up plugin version.
+* Fix Bugs & Linting issues.
+* Tested up to WP 6.7.0.
+
 = 1.0.0 =
 * Added Trash Post feature.
 * Support for Arabic, Danish, Chinese, Hebrew, Hindi, Russian, German, Italian, Croatian, Spanish & French languages.
