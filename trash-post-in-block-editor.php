@@ -44,7 +44,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 			'wp-edit-site',
 		],
 		'1.0.0',
-		false,
+		false
 	);
 
 	wp_set_script_translations(
@@ -97,7 +97,7 @@ add_action( 'rest_api_init', function() {
 			'methods'             => \WP_REST_Server::CREATABLE,
 			'callback'            => __NAMESPACE__ . '\trash_post',
 			'permission_callback' => __NAMESPACE__ . '\is_user_permissible',
-		],
+		]
 	);
 } );
 
