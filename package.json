@@ -1,6 +1,6 @@
 {
   "name": "trash-post-in-block-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Delete a Post from within the WP Block Editor.",
   "author": "badasswp",
   "license": "GPL-2.0-or-later",
