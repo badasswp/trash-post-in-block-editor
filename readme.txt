@@ -1,7 +1,7 @@
 === Trash Post in Block Editor ===
 Contributors: badasswp
 Tags: delete, trash, post, block, editor.
-Requires at least: 4.0
+Requires at least: 6.6
 Tested up to: 6.7.0
 Stable tag: 1.0.1
 Requires PHP: 7.4
