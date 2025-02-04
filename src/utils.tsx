@@ -12,8 +12,8 @@ import { select, dispatch } from '@wordpress/data';
  * @returns {void}
  */
 export const trashPost = async () => {
-  const { getCurrentPostId } = select('core/editor');
-  const { createWarningNotice } = dispatch('core/notices') as any;
+  const { getCurrentPostId } = select( 'core/editor' );
+  const { createWarningNotice } = dispatch( 'core/notices' ) as any;
 
   try {
     await apiFetch(

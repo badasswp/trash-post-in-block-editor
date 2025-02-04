@@ -18,8 +18,8 @@ import './styles/app.scss';
  *
  * @returns {JSX.Element}
  */
-const TrashPostInBlockEditor = () => {
-  const [ isModalVisible, setIsModalVisible ] = useState(false);
+const TrashPostInBlockEditor = (): JSX.Element => {
+  const [ isModalVisible, setIsModalVisible ] = useState( false );
 
   return (
     <Fragment>
@@ -32,7 +32,7 @@ const TrashPostInBlockEditor = () => {
           <div id="tpbe">
             <Button
               variant="primary"
-              onClick={ () => setIsModalVisible(true) }
+              onClick={ () => setIsModalVisible( true ) }
             >
               { __( 'Trash Post', 'trash-post-in-block-editor' ) }
             </Button>
@@ -43,10 +43,10 @@ const TrashPostInBlockEditor = () => {
         isModalVisible && (
           <Modal
             title={ __( 'Trash Post', 'trash-post-in-block-editor' ) }
-            onRequestClose={ () => setIsModalVisible(false) }
+            onRequestClose={ () => setIsModalVisible( false ) }
             className="trash-post-modal"
           >
-            <p style={{textAlign: 'center'}}>
+            <p style={{ textAlign: 'center' }}>
               { __( 'Are you sure you want to delete this Post?', 'trash-post-in-block-editor' ) }
               </p>
             <div id="trash-post-modal__button-group">
@@ -58,7 +58,7 @@ const TrashPostInBlockEditor = () => {
               </Button>
               <Button
                 variant="secondary"
-                onClick={ () => setIsModalVisible(false) }
+                onClick={ () => setIsModalVisible( false ) }
               >
                 { __( 'No', 'trash-post-in-block-editor' ) }
               </Button>
