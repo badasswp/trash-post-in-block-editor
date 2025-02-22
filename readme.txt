@@ -8,7 +8,7 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Trash Post in Block Editor.
+Delete a Post from within the WP Block Editor with just a few clicks, making content management easier and more efficient.
 
 == Installation ==
 
