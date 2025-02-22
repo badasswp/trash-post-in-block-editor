@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+* Update README docs.
+* Tested up to WP 6.7.1.
+
 ## 1.0.2
 * Remove breaking WP dependency.
 * Bump up plugin version.
