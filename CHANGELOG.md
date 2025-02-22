@@ -2,7 +2,7 @@
 
 ## 1.0.3
 * Update README docs.
-* Tested up to WP 6.7.1.
+* Tested up to WP 6.7.2.
 
 ## 1.0.2
 * Remove breaking WP dependency.
