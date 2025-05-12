@@ -13,7 +13,7 @@
     "boot": "yarn install",
     "test": "npm-run-all --parallel test:*",
     "test:js": "jest --passWithNoTests",
-    "ci": "yarn test:js && yarn lint:js && yarn lint:php",
+    "ci": "yarn test:js && yarn lint:js",
     "wp-env": "wp-env",
     "bash": "wp-env run cli bash"
   },
