@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.4
+* Use webpack generated dependencies.
+
 ## 1.0.3
 * Update README docs.
 * Tested up to WP 6.7.2.
