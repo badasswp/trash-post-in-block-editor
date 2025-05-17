@@ -13,6 +13,8 @@
     "boot": "yarn install",
     "test": "npm-run-all --parallel test:*",
     "test:js": "jest --passWithNoTests",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:js:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "ci": "yarn test:js && yarn lint:js && yarn lint:php",
     "wp-env": "wp-env",
     "bash": "wp-env run cli bash"
