@@ -182,6 +182,14 @@ function is_user_permissible( $request ) {
 	return true;
 }
 
+/**
+ * Get Asset dependencies.
+ *
+ * @since 1.0.4
+ *
+ * @param string $path Path to webpack generated PHP asset file.
+ * @return array
+ */
 function get_assets( string $path ): array {
 	$assets = [
 		'version'      => strval( time() ),
