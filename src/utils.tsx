@@ -9,25 +9,23 @@ import { select, dispatch } from '@wordpress/data';
  *
  * @since 1.0.0
  *
- * @returns {void}
+ * @return {void}
  */
 export const trashPost = async () => {
-  const { getCurrentPostId } = select( 'core/editor' );
-  const { createWarningNotice } = dispatch( 'core/notices' ) as any;
+	const { getCurrentPostId } = select( 'core/editor' );
+	const { createWarningNotice } = dispatch( 'core/notices' ) as any;
 
-  try {
-    await apiFetch(
-      {
-        path: '/tpbe/v1/trash',
-        method: 'POST',
-        data: {
-          id: getCurrentPostId()
-        },
-      }
-    );
+	try {
+		await apiFetch( {
+			path: '/tpbe/v1/trash',
+			method: 'POST',
+			data: {
+				id: getCurrentPostId(),
+			},
+		} );
 
-    window.location.href = `${tpbe.url}`
-  } catch (e) {
-    createWarningNotice(e);
-  }
-}
+		window.location.href = `${ tpbe.url }`;
+	} catch ( e ) {
+		createWarningNotice( e );
+	}
+};

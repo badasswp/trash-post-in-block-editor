@@ -1,6 +1,8 @@
 # Changelog
 
 ## 1.0.4
+* Add wp-env for local development.
+* Enforce WP linting across plugin codebase.
 * Use webpack generated dependencies.
 
 ## 1.0.3

@@ -1,0 +1,17 @@
+{
+	"plugins": [
+		"."
+	],
+	"phpVersion": "8.2",
+	"port": 5437,
+	"testsPort": 5438,
+	"config": {
+		"WP_DEBUG": true,
+		"WP_DEBUG_LOG": true,
+		"WP_SITEURL": "http://tpbe.localhost",
+		"WP_HOME": "http://tpbe.localhost"
+	},
+	"lifecycleScripts": {
+		"afterStart": "./bin/setup.sh"
+	}
+}
