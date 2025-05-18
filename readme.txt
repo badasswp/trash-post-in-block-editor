@@ -42,6 +42,13 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 
 == Changelog ==
 
+## 1.0.4
+* Add wp-env for local development.
+* Enforce WP linting across plugin codebase.
+* Use webpack generated dependencies.
+* Update README docs.
+* Tested up to WP 6.7.2
+
 = 1.0.3 =
 * Update README docs.
 * Tested up to WP 6.7.2.
