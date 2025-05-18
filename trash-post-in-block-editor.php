@@ -28,11 +28,11 @@ if ( ! defined( 'WPINC' ) ) {
  * @wp-hook 'enqueue_block_editor_assets'
  */
 add_action( 'enqueue_block_editor_assets', function() {
-	$assets = get_assets( plugin_dir_path( __DIR__ ) . 'dist/app.asset.php' );
+	$assets = get_assets( plugin_dir_path( __FILE__ ) . 'dist/app.asset.php' );
 
 	wp_enqueue_script(
 		'trash-post-in-block-editor',
-		trailingslashit( plugin_dir_url( __FILE__ ) ) . 'dist/app.js',
+		plugin_dir_url( __FILE__ ) . 'dist/app.js',
 		$assets['dependencies'],
 		$assets['version'],
 		false
