@@ -13,6 +13,8 @@
     "boot": "yarn install",
     "test": "npm-run-all --parallel test:*",
     "test:js": "jest --passWithNoTests",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:js:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "ci": "yarn test:js && yarn lint:js",
     "wp-env": "wp-env",
     "bash": "wp-env run cli bash"
@@ -27,7 +29,7 @@
     "@testing-library/react": "15.0.6",
     "@types/jest": "^29.5.4",
     "@wordpress/env": "^10.23.0",
-    "@wordpress/eslint-plugin": "^15.0.0",
+    "@wordpress/eslint-plugin": "^22.9.0",
     "@wordpress/scripts": "^26.9.0",
     "css-loader": "^6.8.1",
     "file-loader": "^6.2.0",

@@ -1,5 +1,7 @@
 .babelrc
 .editorconfig
+.eslintignore
+.eslintrc.js
 .gitignore
 .github
 .wp-env.json

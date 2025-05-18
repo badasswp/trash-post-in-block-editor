@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrashPostInBlockEditor renders sidebar and Trash Post button 1`] = `
+<div>
+  <div
+    class="editor-sidebar"
+  >
+    <h2
+      class="interface-complementary-area-header__title"
+    >
+      Trash Post in Block Editor
+    </h2>
+    <div
+      class="components-panel__body is-opened"
+    >
+      <div
+        id="tpbe"
+      >
+        <button
+          class="components-button is-primary"
+          type="button"
+        >
+          Trash Post
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
