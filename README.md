@@ -15,11 +15,32 @@ This plugin provides a quick way to __delete__ or __trash__ a Post from __within
 
 https://github.com/user-attachments/assets/f02442d8-ff46-49d3-9bb7-9907b8d7174b
 
-## Development
+---
 
-### Setup
+## Contribute
 
-- Clone the repository.
-- Make sure you have [Node](https://nodejs.org) installed on your computer.
-- Run `yarn install && yarn build` to build JS dependencies.
-- For local development, you can use [Docker](https://docs.docker.com/install/) or [Local by Flywheel](https://localwp.com/).
+Contributions are __welcome__ and will be fully __credited__. To contribute, please fork this repo and raise a PR (Pull Request) against the `master` branch.
+
+### Pre-requisites
+
+You should have the following tools before proceeding to the next steps:
+
+- Composer
+- Yarn
+- Docker
+
+To enable you start development, please run:
+
+```bash
+yarn start
+```
+
+This should spin up a local WP env instance for you to work with at:
+
+```bash
+http://tpbe.localhost:5437
+```
+
+You should now have a functioning local WP env to work with. To login to the `wp-admin` backend, please username as `admin` & password as `password`.
+
+__Awesome!__ - Thanks for being interested in contributing your time and code to this project!
