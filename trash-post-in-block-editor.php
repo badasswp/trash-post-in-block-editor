@@ -3,7 +3,7 @@
  * Plugin Name: Trash Post in Block Editor
  * Plugin URI:  https://github.com/badasswp/trash-post-in-block-editor
  * Description: Delete a Post from within the WP Block Editor.
- * Version:     1.0.3
+ * Version:     1.0.4
  * Author:      badasswp
  * Author URI:  https://github.com/badasswp
  * License:     GPL v2 or later
@@ -28,21 +28,13 @@ if ( ! defined( 'WPINC' ) ) {
  * @wp-hook 'enqueue_block_editor_assets'
  */
 add_action( 'enqueue_block_editor_assets', function() {
+	$assets = get_assets( plugin_dir_path( __FILE__ ) . 'dist/app.asset.php' );
+
 	wp_enqueue_script(
 		'trash-post-in-block-editor',
-		trailingslashit( plugin_dir_url( __FILE__ ) ) . 'dist/app.js',
-		[
-			'wp-i18n',
-			'wp-element',
-			'wp-blocks',
-			'wp-components',
-			'wp-editor',
-			'wp-hooks',
-			'wp-compose',
-			'wp-plugins',
-			'wp-edit-post',
-		],
-		'1.0.0',
+		plugin_dir_url( __FILE__ ) . 'dist/app.js',
+		$assets['dependencies'],
+		$assets['version'],
 		false
 	);
 
@@ -188,4 +180,27 @@ function is_user_permissible( $request ) {
 	}
 
 	return true;
+}
+
+/**
+ * Get Asset dependencies.
+ *
+ * @since 1.0.4
+ *
+ * @param string $path Path to webpack generated PHP asset file.
+ * @return array
+ */
+function get_assets( string $path ): array {
+	$assets = [
+		'version'      => strval( time() ),
+		'dependencies' => [],
+	];
+
+	if ( ! file_exists( $path ) ) {
+		return $assets;
+	}
+
+	$assets = require_once $path; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
+
+	return $assets;
 }

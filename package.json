@@ -1,16 +1,23 @@
 {
   "name": "trash-post-in-block-editor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Delete a Post from within the WP Block Editor.",
   "author": "badasswp",
   "license": "GPL-2.0-or-later",
   "homepage": "https://github.com/badasswp/convert-blocks-to-json#readme",
   "scripts": {
-    "start": "npm install && composer install",
-    "dev": "webpack --watch",
+    "start": "yarn boot && yarn build && yarn wp-env start",
+    "stop": "yarn wp-env stop",
+    "watch": "webpack --watch",
     "build": "webpack",
+    "boot": "yarn install",
     "test": "npm-run-all --parallel test:*",
-    "test:js": "jest --passWithNoTests"
+    "test:js": "jest --passWithNoTests",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:js:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "ci": "yarn test:js && yarn lint:js",
+    "wp-env": "wp-env",
+    "bash": "wp-env run cli bash"
   },
   "devDependencies": {
     "@babel/core": "^7.22.11",
@@ -21,7 +28,8 @@
     "@testing-library/jest-dom": "5.17",
     "@testing-library/react": "15.0.6",
     "@types/jest": "^29.5.4",
-    "@wordpress/eslint-plugin": "^15.0.0",
+    "@wordpress/env": "^10.23.0",
+    "@wordpress/eslint-plugin": "^22.9.0",
     "@wordpress/scripts": "^26.9.0",
     "css-loader": "^6.8.1",
     "file-loader": "^6.2.0",
