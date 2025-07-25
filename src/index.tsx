@@ -1,8 +1,8 @@
 import { __ } from '@wordpress/i18n';
-import { PluginSidebar } from '@wordpress/editor';
+import { trash } from '@wordpress/icons';
+import { useState } from '@wordpress/element';
 import { registerPlugin } from '@wordpress/plugins';
-import { Fragment, useState } from '@wordpress/element';
-import { Modal, PanelBody, Button } from '@wordpress/components';
+import { Modal, Tooltip, Button, Fill } from '@wordpress/components';
 
 import { trashPost } from './utils';
 
@@ -20,28 +20,22 @@ import './styles/app.scss';
  */
 const TrashPostInBlockEditor = (): JSX.Element => {
 	const [ isModalVisible, setIsModalVisible ] = useState( false );
+	const { wpVersion } = tpbe;
+
+	// Slot fill name changed in WP 6.6.
+	const fillName =
+		parseFloat( wpVersion ) >= 6.6
+			? 'PinnedItems/core'
+			: 'PinnedItems/core/edit-post';
 
 	return (
-		<Fragment>
-			<PluginSidebar
-				name="tpbe-sidebar"
-				title={ __(
-					'Trash Post in Block Editor',
-					'trash-post-in-block-editor'
-				) }
-				icon="trash"
-			>
-				<PanelBody>
-					<div id="tpbe">
-						<Button
-							variant="primary"
-							onClick={ () => setIsModalVisible( true ) }
-						>
-							{ __( 'Trash Post', 'trash-post-in-block-editor' ) }
-						</Button>
-					</div>
-				</PanelBody>
-			</PluginSidebar>
+		<Fill name={ fillName }>
+			<Tooltip text={ __( 'Trash Post', 'trash-post-in-block-editor' ) }>
+				<Button
+					onClick={ () => setIsModalVisible( true ) }
+					icon={ trash }
+				></Button>
+			</Tooltip>
 			{ isModalVisible && (
 				<Modal
 					title={ __( 'Trash Post', 'trash-post-in-block-editor' ) }
@@ -67,11 +61,12 @@ const TrashPostInBlockEditor = (): JSX.Element => {
 					</div>
 				</Modal>
 			) }
-		</Fragment>
+		</Fill>
 	);
 };
 
 registerPlugin( 'trash-post-in-block-editor', {
+	icon: null,
 	render: TrashPostInBlockEditor,
 } );
 
