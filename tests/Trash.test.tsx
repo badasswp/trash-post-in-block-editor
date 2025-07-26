@@ -1,5 +1,4 @@
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import TrashPostInBlockEditor from '../src/index';
 import { trashPost } from '../src/utils';
