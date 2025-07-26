@@ -50,7 +50,7 @@ describe( 'TrashPostInBlockEditor', () => {
 		expect( getByRole( 'button', { name: 'No' } ) ).toBeVisible();
 	} );
 
-	it( 'calls trashPost function if `Yes` button is clicked', () => {
+	it( 'calls trashPost function if the `Yes` button is clicked', () => {
 		const { getByTestId, getByText, getByRole } = render(
 			<TrashPostInBlockEditor />
 		);
@@ -72,7 +72,7 @@ describe( 'TrashPostInBlockEditor', () => {
 		expect( trashPost ).toHaveBeenCalledTimes( 1 );
 	} );
 
-	it( 'closes modal when if `No` button is clicked', () => {
+	it( 'closes modal if the `No` button is clicked', () => {
 		const { getByTestId, getByText, getByRole, queryByText } = render(
 			<TrashPostInBlockEditor />
 		);
