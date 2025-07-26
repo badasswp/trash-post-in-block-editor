@@ -32,8 +32,9 @@ const TrashPostInBlockEditor = (): JSX.Element => {
 		<Fill name={ fillName }>
 			<Tooltip text={ __( 'Trash Post', 'trash-post-in-block-editor' ) }>
 				<Button
-					onClick={ () => setIsModalVisible( true ) }
 					icon={ trash }
+					onClick={ () => setIsModalVisible( true ) }
+					data-testid="tpbe-trash-btn"
 				></Button>
 			</Tooltip>
 			{ isModalVisible && (
