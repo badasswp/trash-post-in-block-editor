@@ -1,15 +1,17 @@
-const baseConfig = require( '@wordpress/scripts/config/jest-unit.config.js' );
-
 module.exports = {
-	...baseConfig,
-	preset: 'ts-jest',
+	verbose: true,
+	preset: '@wordpress/jest-preset-default',
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: [ './jest.setup.js' ],
+	globals: {
+		window: {},
+	},
 	transform: {
-		'^.+\\.jsx?$': 'babel-jest',
+		'^.+\\.[jt]sx?$': 'babel-jest',
 	},
 	moduleNameMapper: {
 		uuid: require.resolve( 'uuid' ),
-		'\\.(css|scss)$': 'identity-obj-proxy',
+		'\\.(css|less|scss|sass)$': 'identity-obj-proxy',
 	},
+	modulePathIgnorePatterns: [ '/__snapshots__/' ],
 };
