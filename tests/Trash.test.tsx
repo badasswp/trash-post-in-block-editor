@@ -7,6 +7,14 @@ jest.mock( '../src/utils', () => ( {
 	trashPost: jest.fn(),
 } ) );
 
+jest.mock( '../src/components/Shortcut', () => ( {
+	Shortcut: ( { onKeyDown } ) => {
+		onKeyDown = jest.fn();
+		onKeyDown?.();
+		return null;
+	},
+} ) );
+
 describe( 'TrashPostInBlockEditor', () => {
 	beforeEach( () => {
 		global.tpbe = {
