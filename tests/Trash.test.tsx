@@ -26,7 +26,7 @@ describe( 'TrashPostInBlockEditor', () => {
 		expect( container ).toMatchSnapshot();
 	} );
 
-	it( 'renders sidebar and Trash Post button', () => {
+	it( 'renders trash button in pinned item area', () => {
 		const { getByTestId } = render( <TrashPostInBlockEditor /> );
 
 		// Test if Trash Post button is displayed.
@@ -34,7 +34,7 @@ describe( 'TrashPostInBlockEditor', () => {
 		expect( trashButton ).toBeVisible();
 	} );
 
-	it( 'displays modal when Trash Post button is clicked', () => {
+	it( 'displays modal when trash button is clicked', () => {
 		const { getByTestId, getByText, getByRole } = render(
 			<TrashPostInBlockEditor />
 		);
