@@ -4,6 +4,7 @@ import { useState } from '@wordpress/element';
 import { registerPlugin } from '@wordpress/plugins';
 import { Modal, Tooltip, Button, Fill } from '@wordpress/components';
 
+import { Shortcut } from './components/Shortcut';
 import { trashPost } from './utils';
 
 import './styles/app.scss';
@@ -37,6 +38,7 @@ const TrashPostInBlockEditor = (): JSX.Element => {
 					data-testid="tpbe-trash-btn"
 				></Button>
 			</Tooltip>
+			<Shortcut onKeyDown={ () => setIsModalVisible( true ) } />
 			{ isModalVisible && (
 				<Modal
 					title={ __( 'Trash Post', 'trash-post-in-block-editor' ) }
