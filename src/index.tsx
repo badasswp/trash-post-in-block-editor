@@ -42,6 +42,7 @@ const TrashPostInBlockEditor = (): JSX.Element => {
 			{ isModalVisible && (
 				<Modal
 					title={ __( 'Trash Post', 'trash-post-in-block-editor' ) }
+					focusOnMount="firstContentElement"
 					onRequestClose={ () => setIsModalVisible( false ) }
 					className="trash-post-modal"
 				>
