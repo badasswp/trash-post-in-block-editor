@@ -30,9 +30,6 @@ jobs:
       run: |
         yarn test:js
 
-    - name: Install Playwright dependencies
-      run: npx playwright install-deps
-
     - name: Start wp-env
       run: npx wp-env start
 
@@ -43,6 +40,9 @@ jobs:
           echo "Waiting for wp-env..."
           sleep 2
         done
+
+    - name: Install Playwright dependencies
+      run: npx playwright install-deps
 
     - name: Run E2E tests
       run: |
