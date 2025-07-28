@@ -13,7 +13,7 @@
     "boot": "yarn install",
     "test": "npm-run-all --parallel test:*",
     "test:js": "jest --passWithNoTests",
-		"test:e2e": "playwright test",
+		"test:e2e": "playwright install && playwright test",
 		"test:e2e:debug": "playwright test --ui",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:js:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
