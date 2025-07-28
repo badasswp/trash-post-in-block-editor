@@ -30,13 +30,17 @@ jobs:
       run: |
         yarn test:js
 
+    - name: Build plugin
+      run: |
+        yarn build
+
     - name: Start wp-env
-      run: npx wp-env start
+      run: yarn wp-env start
 
     - name: Wait for WordPress to be ready
       run: |
         for i in {1..30}; do
-          curl --head --fail http://tpbe.localhost:5438/wp-login.php && break
+          curl --head --fail http://localhost:5438/wp-login.php && break
           echo "Waiting for wp-env..."
           sleep 2
         done
