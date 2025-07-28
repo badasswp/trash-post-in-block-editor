@@ -38,11 +38,11 @@ jobs:
 
     - name: Wait for WordPress to be ready
       run: |
-         for i in {1..30}; do
+        for i in {1..30}; do
           curl --head --fail http://tpbe.localhost:5438/wp-login.php && break
           echo "Waiting for wp-env..."
           sleep 2
-          done
+        done
 
     - name: Run E2E tests
       run: |
