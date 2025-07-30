@@ -3,7 +3,7 @@
  * Plugin Name: Trash Post in Block Editor
  * Plugin URI:  https://github.com/badasswp/trash-post-in-block-editor
  * Description: Delete a Post from within the WP Block Editor.
- * Version:     1.0.4
+ * Version:     1.0.5
  * Author:      badasswp
  * Author URI:  https://github.com/badasswp
  * License:     GPL v2 or later
@@ -29,6 +29,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 add_action( 'enqueue_block_editor_assets', function() {
 	$assets = get_assets( plugin_dir_path( __FILE__ ) . 'dist/app.asset.php' );
+	global $wp_version;
 
 	wp_enqueue_script(
 		'trash-post-in-block-editor',
@@ -48,7 +49,8 @@ add_action( 'enqueue_block_editor_assets', function() {
 		'trash-post-in-block-editor',
 		'tpbe',
 		[
-			'url' => add_query_arg(
+			'wpVersion' => $wp_version,
+			'url'       => add_query_arg(
 				[
 					'post_type' => get_post_type()
 				],

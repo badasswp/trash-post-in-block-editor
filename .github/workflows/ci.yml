@@ -26,6 +26,6 @@ jobs:
       run: |
         yarn lint:js
 
-    - name: Run Test Suites
+    - name: Run Unit tests
       run: |
-        yarn test
+        yarn test:js

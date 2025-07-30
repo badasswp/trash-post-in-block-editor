@@ -1,6 +1,7 @@
 declare global {
   var tpbe: {
-    url: string;
+		url: string;
+		wpVersion: string;
   };
 }
 

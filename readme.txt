@@ -3,7 +3,7 @@ Contributors: badasswp
 Tags: delete, trash, post, block, editor.
 Requires at least: 6.6
 Tested up to: 6.7.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,7 +42,12 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 
 == Changelog ==
 
-## 1.0.4
+= 1.0.5 =
+* Feat: Re-position trash icon to Pinned Items area.
+* Feat: Add shortcut command - CMD + SHIFT + K.
+* Test: Add e2e automation tests.
+
+= 1.0.4 =
 * Add wp-env for local development.
 * Enforce WP linting across plugin codebase.
 * Use webpack generated dependencies.

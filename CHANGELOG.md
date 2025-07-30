@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5
+* Feat: Re-position trash icon to Pinned Items area.
+* Feat: Add shortcut command - CMD + SHIFT + K.
+* Test: Add e2e automation tests.
+
 ## 1.0.4
 * Add wp-env for local development.
 * Enforce WP linting across plugin codebase.
