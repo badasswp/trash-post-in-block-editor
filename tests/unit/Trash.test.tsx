@@ -1,13 +1,13 @@
 import { render, fireEvent } from '@testing-library/react';
 
-import TrashPostInBlockEditor from '../src/index';
-import { trashPost } from '../src/utils';
+import TrashPostInBlockEditor from '../../src/index';
+import { trashPost } from '../../src/utils';
 
-jest.mock( '../src/utils', () => ( {
+jest.mock( '../../src/utils', () => ( {
 	trashPost: jest.fn(),
 } ) );
 
-jest.mock( '../src/components/Shortcut', () => ( {
+jest.mock( '../../src/components/Shortcut', () => ( {
 	Shortcut: ( { onKeyDown } ) => {
 		onKeyDown = jest.fn();
 		onKeyDown?.();

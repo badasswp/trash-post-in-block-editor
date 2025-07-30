@@ -5,6 +5,8 @@
 .gitignore
 .github
 .wp-env.json
+playwright.config.js
+playwright.setup.js
 CHANGELOG.md
 jest.config.js
 jest.setup.js
