@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6
+* Bump up plugin version.
+* Tested up to WP 6.8
+* Update README docs.
+
 ## 1.0.5
 * Feat: Re-position trash icon to Pinned Items area.
 * Feat: Add shortcut command - CMD + SHIFT + K.
