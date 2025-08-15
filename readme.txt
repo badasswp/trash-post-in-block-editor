@@ -2,8 +2,8 @@
 Contributors: badasswp
 Tags: delete, trash, post, block, editor.
 Requires at least: 6.6
-Tested up to: 6.7.2
-Stable tag: 1.0.5
+Tested up to: 6.8
+Stable tag: 1.0.6
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,11 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 3. Yes/No Prompt - Delete Post from within the WP Block Editor.
 
 == Changelog ==
+
+= 1.0.6 =
+* Bump up plugin version.
+* Tested up to WP 6.8
+* Update README docs.
 
 = 1.0.5 =
 * Feat: Re-position trash icon to Pinned Items area.
