@@ -45,17 +45,30 @@ add_action( 'enqueue_block_editor_assets', function() {
 		plugin_dir_path( __FILE__ ) . 'languages'
 	);
 
+	/**
+	 * Filter Redirect URL.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param string $redirect_url Redirect URL.
+	 * @return string
+	 */
+	$redirect_url = apply_filters(
+		'tpbe_redirect_url',
+		add_query_arg(
+			[
+				'post_type' => get_post_type()
+			],
+			sprintf( '%s/%s', untrailingslashit( get_admin_url() ), 'edit.php' )
+		),
+	);
+
 	wp_localize_script(
 		'trash-post-in-block-editor',
 		'tpbe',
 		[
 			'wpVersion' => $wp_version,
-			'url'       => add_query_arg(
-				[
-					'post_type' => get_post_type()
-				],
-				sprintf( '%s/%s', untrailingslashit( get_admin_url() ), 'edit.php' )
-			),
+			'url'       => $redirect_url,
 		]
 	);
 } );
