@@ -92,6 +92,7 @@ add_action( 'init', function() {
  * Setup REST routes.
  *
  * @since 1.0.0
+ * @since 1.1.0 Use validate & sanitize callbacks.
  *
  * @wp-hook 'rest_api_init'
  */
@@ -100,6 +101,14 @@ add_action( 'rest_api_init', function() {
 		'tpbe/v1',
 		'/trash',
 		[
+			'args'                => [
+				'id' => [
+					'validate_callback' => function ( $param ) {
+						return is_numeric( $param );
+					},
+					'sanitize_callback' => 'absint',
+				],
+			],
 			'methods'             => \WP_REST_Server::CREATABLE,
 			'callback'            => __NAMESPACE__ . '\trash_post',
 			'permission_callback' => __NAMESPACE__ . '\is_user_permissible',
@@ -124,22 +133,7 @@ function trash_post( $request ): \WP_REST_Response {
 	$args = $request->get_json_params();
 
 	// Get Post ID.
-	$post_id = (int) ( $args['id'] ?? '' );
-
-	// Bail out, if it does NOT exists.
-	if ( ! get_post( $post_id ) ) {
-		return new \WP_Error(
-			'tpbe-bad-request',
-			sprintf(
-				'Fatal Error: Bad Request, Post does not exists for ID: %s',
-				$post_id
-			),
-			[
-				'status'  => 400,
-				'request' => $args,
-			]
-		);
-	}
+	$post_id = $args['id'];
 
 	if ( ! wp_delete_post( $post_id ) ) {
 		return new \WP_Error(
