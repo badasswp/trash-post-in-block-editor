@@ -172,7 +172,7 @@ function trash_post( $request ): \WP_REST_Response {
 function is_user_permissible( $request ) {
 	$http_error = rest_authorization_required_code();
 
-	if ( ! current_user_can( 'administrator' ) ) {
+	if ( ! current_user_can( 'edit_posts' ) ) {
 		return new \WP_Error(
 			'tpbe-rest-forbidden',
 			sprintf( 'Invalid User. Error: %s', $http_error ),
