@@ -1,5 +1,5 @@
 import apiFetch from '@wordpress/api-fetch';
-import { applyFilters } from '@wordpress/hooks';
+import { applyFilters, doAction } from '@wordpress/hooks';
 import { select, dispatch } from '@wordpress/data';
 
 /**
@@ -24,6 +24,18 @@ export const trashPost = async () => {
 				id: getCurrentPostId(),
 			},
 		} );
+
+		/**
+		 * Fires after post is deleted.
+		 *
+		 * @since 1.1.0
+		 *
+		 * @param {number} postId      Post ID.
+		 * @param {string} redirectUrl Redirect URL.
+		 *
+		 * @return {void}
+		 */
+		doAction( 'tpbe.afterTrashPost', getCurrentPostId(), tpbe.url );
 
 		window.location.href = `${ tpbe.url }`;
 	} catch ( e ) {
