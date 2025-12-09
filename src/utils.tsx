@@ -12,7 +12,7 @@ import { select, dispatch } from '@wordpress/data';
  *
  * @return {void}
  */
-export const trashPost = async () => {
+export const trashPost = async (): Promise< void > => {
 	const { getCurrentPostId } = select( 'core/editor' );
 	const { createWarningNotice } = dispatch( 'core/notices' ) as any;
 
