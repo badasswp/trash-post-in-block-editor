@@ -68,7 +68,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 		'tpbe',
 		[
 			'wpVersion' => $wp_version,
-			'url'       => $redirect_url,
+			'url'       => esc_url( $redirect_url ),
 		]
 	);
 } );
