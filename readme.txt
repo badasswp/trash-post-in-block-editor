@@ -42,6 +42,12 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 
 == Changelog ==
 
+= 1.1.0 =
+* Feat: Add custom hooks - `tpbe_redirect_url`, `tpbe.afterTrashPost`.
+* Improve `/trash` REST endpoint.
+* Tested up to WP 6.8
+* Update README docs.
+
 = 1.0.6 =
 * Bump up plugin version.
 * Tested up to WP 6.8
