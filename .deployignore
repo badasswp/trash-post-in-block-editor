@@ -17,3 +17,4 @@ assets
 src
 tests
 bin
+phpcs.xml
