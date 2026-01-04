@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+* Use Composer for plugin setup.
+* Tested up to WP 6.9.
+
 ## 1.1.0
 * Feat: Add custom hooks - `tpbe_redirect_url`, `tpbe.afterTrashPost`.
 * Improve `/trash` REST endpoint.
