@@ -39,6 +39,11 @@ jobs:
         git add dist/ -f
         git rm package.json
 
+    - name: Build Vendor folder
+      run: |
+        composer install --no-dev
+        git add vendor/ -f
+
     - name: Clean Up Files
       run: |
         while IFS= read -r file; do
@@ -47,6 +52,7 @@ jobs:
         git rm .deployignore
         git clean -f yarn.lock
         git clean -f node_modules
+        git clean -f composer.lock
 
     - name: Push to Master Built
       run: |
