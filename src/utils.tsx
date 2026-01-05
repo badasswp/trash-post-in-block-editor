@@ -39,7 +39,7 @@ export const trashPost = async (): Promise< void > => {
 
 		window.location.href = `${ tpbe.url }`;
 	} catch ( e ) {
-		createWarningNotice( e );
+		createWarningNotice( e.message );
 	}
 };
 
