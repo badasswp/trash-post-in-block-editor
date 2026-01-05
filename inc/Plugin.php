@@ -142,8 +142,8 @@ class Plugin {
 					],
 				],
 				'methods'             => WP_REST_Server::CREATABLE,
-				'callback'            => [ 'this', 'trash_post' ],
-				'permission_callback' => [ 'this', 'is_user_permissible' ],
+				'callback'            => [ $this, 'trash_post' ],
+				'permission_callback' => [ $this, 'is_user_permissible' ],
 			]
 		);
 	}
