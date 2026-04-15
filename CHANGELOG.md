@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.0
+* Chore: Added a pull request template file.
+
 ## 1.1.1
 * Use Composer for plugin setup.
 * Tested up to WP 6.9.
