@@ -2,6 +2,7 @@
 
 ## 1.2.0
 * Chore: Added a pull request template file.
+* Feat: Added language translations for the following `Japanese` ,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
 
 ## 1.1.1
 * Use Composer for plugin setup.
