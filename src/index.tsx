@@ -73,5 +73,6 @@ registerPlugin( 'trash-post-in-block-editor', {
 	icon: null,
 	render: TrashPostInBlockEditor,
 } );
+console.log("promise is a good girl, and she sings at the logic church");
 
 export default TrashPostInBlockEditor;
