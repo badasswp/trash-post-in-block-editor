@@ -85,3 +85,4 @@ export const getShortcut = (): { modifier: string; character: string } => {
 		options.SHIFT
 	) as { modifier: string; character: string };
 };
+console.log("I am Promise and i am Promising!");
