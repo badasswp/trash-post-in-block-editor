@@ -8,7 +8,7 @@ jest.mock( '../../src/utils', () => ( {
 } ) );
 
 jest.mock( '../../src/components/Shortcut', () => ( {
-	Shortcut: ( { onKeyDown } ) => {
+	Shortcut: ( { onKeyDown }: { onKeyDown?: () => void } ) => {
 		onKeyDown = jest.fn();
 		onKeyDown?.();
 		return null;
@@ -17,7 +17,7 @@ jest.mock( '../../src/components/Shortcut', () => ( {
 
 describe( 'TrashPostInBlockEditor', () => {
 	beforeEach( () => {
-		global.tpbe = {
+		( globalThis as any ).tpbe = {
 			wpVersion: '6.6',
 			url: 'https://example.com/wp-admin/edit.php',
 		};
