@@ -43,6 +43,7 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 == Changelog ==
 
 = 1.2.0
+* Feat: Added language translations for the following `Japanese` ,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
 * Chore: Added a pull request template file.
 
 = 1.1.1 =
