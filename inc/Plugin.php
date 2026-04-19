@@ -65,7 +65,7 @@ class Plugin {
 
 		wp_enqueue_script(
 			'trash-post-in-block-editor',
-			plugin_dir_url( __FILE__ ) . '../dist/app.js',
+			plugins_url( 'trash-post-in-block-editor/dist/app.js' ),
 			$assets['dependencies'],
 			$assets['version'],
 			false
