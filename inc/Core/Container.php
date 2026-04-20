@@ -32,7 +32,7 @@ class Container implements Kernel {
 	public function __construct() {
 		static::$bindings = [
 			Boot::class,
-            Trash::class,
+			Trash::class,
 		];
 	}
 
@@ -47,7 +47,7 @@ class Container implements Kernel {
 	 * @return void
 	 */
 	public function register(): void {
-		foreach( static::$bindings as $binding ){
+		foreach ( static::$bindings as $binding ) {
 			( $binding::get_instance() )->register();
 		}
 	}

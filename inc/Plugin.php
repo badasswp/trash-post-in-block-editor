@@ -47,5 +47,4 @@ class Plugin {
 	public function run(): void {
 		( new Container() )->register();
 	}
-
 }
