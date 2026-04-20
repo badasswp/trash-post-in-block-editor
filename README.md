@@ -17,6 +17,8 @@ https://github.com/user-attachments/assets/f02442d8-ff46-49d3-9bb7-9907b8d7174b
 
 ### Hooks
 
+### PHP Hooks
+
 #### `tpbe_redirect_url`
 
 This custom hook provides a simple way to filter the redirect URL the user is taken to after the post is trashed or deleted.
@@ -40,6 +42,8 @@ public function custom_redirect_url( $url ): string {
 - url _`{string}`_ By default, this will be a the redirect URL the user is taken to after a post is trashed.
 <br/>
 
+### JS Hooks
+
 #### `tpbe.afterTrashPost`
 
 This custom hook (action) provides the ability to fire events after the post is trashed on the JS side:
@@ -60,6 +64,30 @@ addAction(
 
 - postId _`{number}`_ The trashed Post ID.
 - redirectUrl _`{string}`_ The Redirect URL where the user is taken after the post is trashed.
+<br/>
+
+#### `tpbe.keyboardShortcut`
+
+This custom hook (filter) provides a way for users to specify their preferred keyboard shortcut option. For e.g to use the 'K' option on your keyboard, you could do like so:
+
+```js
+import { addFilter } from '@wordpress/hooks';
+
+addFilter(
+	'tpbe.keyboardShortcut',
+	'yourShortcut',
+	( shortcut ) => {
+		return {
+			character: 'k',
+			...shortcut,
+		};
+	}
+);
+```
+
+**Parameters**
+
+- shortcut _`{Object}`_ By default this is an object, containing `modifier` and `character` properties which together represent the following command `CMD + Shift + Delete (Backspace)`.
 <br/>
 
 ---
