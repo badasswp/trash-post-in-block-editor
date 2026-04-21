@@ -46,45 +46,10 @@ class Trash extends Route {
 					],
 				],
 				'methods'             => WP_REST_Server::CREATABLE,
-				'callback'            => [ $this, 'trash_post' ],
+				'callback'            => [ $this, 'get_rest_response' ],
 				'permission_callback' => [ $this, 'is_user_permissible' ],
 			]
 		);
-	}
-
-	/**
-	 * Is User Permissible?
-	 *
-	 * Validate that User has Admin capabilities
-	 * and Nonce is set correctly.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param \WP_REST_Request $request Request Object.
-	 * @return bool|\WP_Error
-	 *
-	 * @wp-hook 'rest_api_init'
-	 */
-	public function is_user_permissible( $request ) {
-		$http_error = rest_authorization_required_code();
-
-		if ( ! current_user_can( 'edit_posts' ) ) {
-			return new WP_Error(
-				'tpbe-rest-forbidden',
-				sprintf( 'Invalid User. Error: %s', $http_error ),
-				[ 'status' => $http_error ]
-			);
-		}
-
-		if ( ! wp_verify_nonce( $request->get_header( 'X-WP-Nonce' ), 'wp_rest' ) ) {
-			return new WP_Error(
-				'tpbe-rest-forbidden',
-				sprintf( 'Invalid Nonce. Error: %s', $http_error ),
-				[ 'status' => $http_error ]
-			);
-		}
-
-		return true;
 	}
 
 	/**
@@ -100,7 +65,7 @@ class Trash extends Route {
 	 *
 	 * @wp-hook 'rest_api_init'
 	 */
-	public function trash_post( $request ): WP_REST_Response {
+	public function get_rest_response( $request ) {
 		$args = $request->get_json_params();
 
 		// Get Post ID.

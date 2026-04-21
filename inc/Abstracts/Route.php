@@ -9,18 +9,58 @@
  */
 namespace TrashPostInBlockEditor\Abstracts;
 
-use TrashPostInBlockEditor\Abstracts\Service;
-use TrashPostInBlockEditor\Interfaces\Kernel;
+use WP_Error;
+use TrashPostInBlockEditor\Interfaces\Router;
 
 abstract class Route implements Router {
 	/**
-	 * Register to WP.
+	 * Is User Permissible?
 	 *
-	 * Bind concrete logic to WP here.
+	 * Validate that User has Admin capabilities
+	 * and Nonce is set correctly.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param \WP_REST_Request $request Request Object.
+	 * @return bool|\WP_Error
+	 *
+	 * @wp-hook 'rest_api_init'
+	 */
+	public function is_user_permissible( $request ) {
+		$http_error = rest_authorization_required_code();
+
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			return new WP_Error(
+				'tpbe-rest-forbidden',
+				sprintf( 'Invalid User. Error: %s', $http_error ),
+				[ 'status' => $http_error ]
+			);
+		}
+
+		if ( ! wp_verify_nonce( $request->get_header( 'X-WP-Nonce' ), 'wp_rest' ) ) {
+			return new WP_Error(
+				'tpbe-rest-forbidden',
+				sprintf( 'Invalid Nonce. Error: %s', $http_error ),
+				[ 'status' => $http_error ]
+			);
+		}
+
+		return true;
+	}
+
+	/**
+	 * Get Rest Reponse
 	 *
 	 * @since 1.2.0
 	 *
-	 * @return void
+	 * @return \WP_REST_Response|\WP_Error
 	 */
-	abstract public function register(): void;
+	abstract public function get_rest_response( $request );
+
+	/**
+	 * Setup REST routes.
+	 *
+	 * @since 1.2.0
+	 */
+	abstract public function register_route();
 }

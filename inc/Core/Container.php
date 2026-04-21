@@ -12,7 +12,7 @@ namespace TrashPostInBlockEditor\Core;
 
 use TrashPostInBlockEditor\Interfaces\Kernel;
 use TrashPostInBlockEditor\Services\Boot;
-use TrashPostInBlockEditor\Routes\Trash;
+use TrashPostInBlockEditor\Services\Routes;
 
 class Container implements Kernel {
 	/**
@@ -32,7 +32,7 @@ class Container implements Kernel {
 	public function __construct() {
 		static::$bindings = [
 			Boot::class,
-			Trash::class,
+			Routes::class,
 		];
 	}
 
