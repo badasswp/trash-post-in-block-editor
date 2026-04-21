@@ -12,7 +12,7 @@ namespace TrashPostInBlockEditor\Abstracts;
 use TrashPostInBlockEditor\Abstracts\Service;
 use TrashPostInBlockEditor\Interfaces\Kernel;
 
-abstract class Route extends Service implements Kernel {
+abstract class Route implements Router {
 	/**
 	 * Register to WP.
 	 *
