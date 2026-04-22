@@ -12,7 +12,7 @@ namespace TrashPostInBlockEditor\Services;
 
 use TrashPostInBlockEditor\Abstracts\Service;
 
-class Boot extends Service {
+class Boot extends Service implements Kernel {
 	/**
 	 * Bind to WP.
 	 *
