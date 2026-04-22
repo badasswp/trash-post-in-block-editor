@@ -12,6 +12,7 @@ namespace TrashPostInBlockEditor\Services;
 
 use TrashPostInBlockEditor\Routes\Trash;
 use TrashPostInBlockEditor\Abstracts\Service;
+use TrashPostInBlockEditor\Interfaces\Kernel;
 
 class Routes extends Service implements Kernel {
 	/**

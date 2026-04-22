@@ -11,6 +11,7 @@ use WP_REST_Server;
 use WP_REST_Response;
 
 use TrashPostInBlockEditor\Abstracts\Route;
+use TrashPostInBlockEditor\Interfaces\Router;
 
 class Trash extends Route implements Router {
 	/**

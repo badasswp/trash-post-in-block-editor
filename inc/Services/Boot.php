@@ -11,6 +11,7 @@
 namespace TrashPostInBlockEditor\Services;
 
 use TrashPostInBlockEditor\Abstracts\Service;
+use TrashPostInBlockEditor\Interfaces\Kernel;
 
 class Boot extends Service implements Kernel {
 	/**
