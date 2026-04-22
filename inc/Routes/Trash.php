@@ -12,7 +12,7 @@ use WP_REST_Response;
 
 use TrashPostInBlockEditor\Abstracts\Route;
 
-class Trash extends Route {
+class Trash extends Route implements Router {
 	/**
 	 * Bind to WP
 	 *
