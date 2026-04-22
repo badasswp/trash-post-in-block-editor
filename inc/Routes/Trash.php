@@ -13,16 +13,6 @@ use WP_REST_Response;
 use TrashPostInBlockEditor\Abstracts\Route;
 
 class Trash extends Route implements Router {
-	/**
-	 * Bind to WP
-	 *
-	 * @since 1.2.0
-	 *
-	 * @return void
-	 */
-	public function register(): void {
-		add_action( 'rest_api_init', [ $this, 'register_route' ] );
-	}
 
 	/**
 	 * Setup REST routes.
