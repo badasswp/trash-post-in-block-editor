@@ -16,7 +16,7 @@ use TrashPostInBlockEditor\Interfaces\Kernel;
 
 class Routes extends Service implements Kernel {
 	/**
-	 * REST routes
+	 * REST routes.
 	 *
 	 * @since 1.2.0
 	 *
