@@ -57,7 +57,7 @@ class Routes extends Service implements Kernel {
 	 */
 	public function register_rest_routes(): void {
 		/**
-		 * Filter list of WP REST Routes
+		 * Filter list of WP REST Routes.
 		 *
 		 * @since 1.2.0
 		 *
