@@ -3,7 +3,7 @@
  * Boot Service.
  *
  * Handle all setup login before plugin is
- * fully capable
+ * fully capable.
  *
  * @package TrashPostInBlockEditor
  */
