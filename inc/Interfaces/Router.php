@@ -1,9 +1,9 @@
 <?php
 /**
- * Router Interface
+ * Router Interface.
  *
- * Establish base methods for all Concrete Classes
- * used across the plugin
+ * Establish base methods for all Route concrete
+ * classes used across the plugin.
  *
  * @package TrashPostInBlockEditor
  */
