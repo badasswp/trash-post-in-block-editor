@@ -67,7 +67,7 @@ class Routes extends Service implements Kernel {
 		$this->routes = (array) apply_filters( 'tpbe_rest_routes', $this->routes );
 
 		/**
-		 * Specify Routes instance type
+		 * Specify Routes instance type.
 		 *
 		 * @since 1.2.0
 		 *
