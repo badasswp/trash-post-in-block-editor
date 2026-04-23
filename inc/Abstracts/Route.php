@@ -49,7 +49,7 @@ abstract class Route implements Router {
 	}
 
 	/**
-	 * Get Rest Reponse
+	 * Get Rest Reponse.
 	 *
 	 * @since 1.2.0
 	 *
