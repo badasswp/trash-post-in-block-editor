@@ -1,6 +1,6 @@
 <?php
 /**
- * Kernel Interface
+ * Kernel Interface.
  *
  * Establish base methods for Concrete classes
  * used across plugin.
