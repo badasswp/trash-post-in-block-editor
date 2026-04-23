@@ -1,6 +1,8 @@
 <?php
 /**
- * Sets up all Routes
+ * This class defines the concrete implementation
+ * for registering the trash endpoint and callback that is
+ * called when the user trashes a post.
  *
  * @package TrashPostInBlockEditor
  */
