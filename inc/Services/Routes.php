@@ -38,7 +38,7 @@ class Routes extends Service implements Kernel {
 	}
 
 	/**
-	 * Bind to WP
+	 * Bind to WP.
 	 *
 	 * @since 1.2.0
 	 *
