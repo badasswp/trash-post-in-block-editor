@@ -25,7 +25,7 @@ class Routes extends Service implements Kernel {
 	public array $routes;
 
 	/**
-	 * Set up
+	 * Set up.
 	 *
 	 * @since 1.2.0
 	 *
