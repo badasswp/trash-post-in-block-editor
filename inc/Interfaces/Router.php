@@ -23,7 +23,7 @@ interface Router {
 	public function is_user_permissible( $request );
 
 	/**
-	 * Get Rest Reponse
+	 * Get Rest Reponse.
 	 *
 	 * @since 1.2.0
 	 *
