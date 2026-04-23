@@ -71,7 +71,7 @@ class Routes extends Service implements Kernel {
 		 *
 		 * @since 1.2.0
 		 *
-		 * @var parse $route
+		 * @var Router $route
 		 */
 		foreach ( $this->routes as $route ) {
 			( new $route() )->register_route();
