@@ -29,7 +29,7 @@ class RoutesTest extends TestCase {
 	}
 
 	public function test_register() {
-		WP_Mock::expectActionAdded( 'rest_api_init', [ $this->routes, 'register_rest_routes'] );
+		WP_Mock::expectActionAdded( 'rest_api_init', [ $this->routes, 'register_rest_routes' ] );
 
 		$this->routes->register();
 
@@ -40,7 +40,7 @@ class RoutesTest extends TestCase {
 		$this->assertSame(
 			$this->routes->routes,
 			[
-				Trash::class
+				Trash::class,
 			],
 		);
 
@@ -53,17 +53,19 @@ class RoutesTest extends TestCase {
 			->reply( [ Trash::class ] );
 
 		WP_Mock::userFunction( 'register_rest_route' )
-			->andReturnUsing( function ( $namespace, $route, $args ) {
-				$validate = $args['args']['id']['validate_callback'];
+			->andReturnUsing(
+				function ( $namespace, $route, $args ) {
+					$validate = $args['args']['id']['validate_callback'];
 
-				$this->assertSame( 'tpbe/v1', $namespace );
-				$this->assertSame( '/trash', $route );
-				$this->assertSame( WP_REST_Server::CREATABLE, $args['methods'] );
-				$this->assertSame( 'absint', $args['args']['id']['sanitize_callback'] );
-				$this->assertTrue( is_callable( $validate ) );
-				$this->assertTrue( $validate( '123' ) );
-				$this->assertFalse( $validate( 'abc' ) );
-			});
+					$this->assertSame( 'tpbe/v1', $namespace );
+					$this->assertSame( '/trash', $route );
+					$this->assertSame( WP_REST_Server::CREATABLE, $args['methods'] );
+					$this->assertSame( 'absint', $args['args']['id']['sanitize_callback'] );
+					$this->assertTrue( is_callable( $validate ) );
+					$this->assertTrue( $validate( '123' ) );
+					$this->assertFalse( $validate( 'abc' ) );
+				}
+			);
 
 		$this->routes->register_rest_routes();
 

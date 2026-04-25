@@ -58,8 +58,8 @@ class RouteTest extends TestCase {
 			->with( 'a8ceg59jeqwvk', 'wp_rest' )
 			->andReturn( false );
 
-		$wp_error = Mockery::mock( WP_Error::class)->makePartial();
-		$request = Mockery::mock( WP_REST_Request::class )->makePartial();
+		$wp_error = Mockery::mock( WP_Error::class )->makePartial();
+		$request  = Mockery::mock( WP_REST_Request::class )->makePartial();
 		$request->shouldAllowMockingProtectedMethods();
 
 		$request->shouldReceive( 'get_header' )
@@ -115,4 +115,3 @@ class RouteTest extends TestCase {
 		$this->assertConditionsMet();
 	}
 }
-

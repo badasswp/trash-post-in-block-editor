@@ -19,7 +19,7 @@ class PluginTest extends TestCase {
 		WP_Mock::tearDown();
 	}
 
-	public function test_plugin_returns_same_instance(){
+	public function test_plugin_returns_same_instance() {
 		$instance1 = Plugin::get_instance();
 		$instance2 = Plugin::get_instance();
 

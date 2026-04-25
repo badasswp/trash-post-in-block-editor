@@ -28,7 +28,7 @@ class RouterTest extends TestCase {
 
 	public function test_is_user_permissible() {
 		$this->router->expects( $this->once() )
-			->method( 'is_user_permissible');
+			->method( 'is_user_permissible' );
 
 		$request = Mockery::mock( WP_REST_Request::class )->makePartial();
 

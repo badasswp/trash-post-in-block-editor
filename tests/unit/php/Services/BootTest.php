@@ -28,8 +28,8 @@ class BootTest extends TestCase {
 	}
 
 	public function test_register() {
-		WP_Mock::expectActionAdded( 'enqueue_block_editor_assets', [ $this->boot, 'register_assets', ] );
-		WP_Mock::expectActionAdded( 'init', [ $this->boot, 'register_text_domain', ] );
+		WP_Mock::expectActionAdded( 'enqueue_block_editor_assets', [ $this->boot, 'register_assets' ] );
+		WP_Mock::expectActionAdded( 'init', [ $this->boot, 'register_text_domain' ] );
 
 		$this->boot->register();
 
@@ -45,8 +45,8 @@ class BootTest extends TestCase {
 		$mock_boot->shouldReceive( 'get_assets' )
 			->andReturn(
 				[
-					'dependencies'  =>[],
-					'version' 		=> 'ec9080196954ae49fb68',
+					'dependencies' => [],
+					'version'      => 'ec9080196954ae49fb68',
 				]
 			);
 
@@ -82,7 +82,7 @@ class BootTest extends TestCase {
 
 		WP_Mock::userFunction( 'untrailingslashit' )
 			->with( 'https://example.com/wp-admin/' )
-			->andReturn( 'https://example.com/wp-admin');
+			->andReturn( 'https://example.com/wp-admin' );
 
 		WP_Mock::userFunction( 'get_admin_url' )
 			->with()
@@ -91,11 +91,11 @@ class BootTest extends TestCase {
 		WP_Mock::userFunction( 'add_query_arg' )
 			->with(
 				[
-					'post_type' => 'post'
+					'post_type' => 'post',
 				],
 				'https://example.com/wp-admin/edit.php'
 			)
-			->andReturn( 'https://example.com/wp-admin/edit.php?post_type=post');
+			->andReturn( 'https://example.com/wp-admin/edit.php?post_type=post' );
 
 		WP_Mock::expectFilter(
 			'tpbe_redirect_url',
@@ -112,12 +112,11 @@ class BootTest extends TestCase {
 				'trash-post-in-block-editor',
 				'tpbe',
 				[
-					'wpVersion'  => $wpVersion,
-					'url'        => 'https://example.com/wp-admin/edit.php?post_type=post',
+					'wpVersion' => $wpVersion,
+					'url'       => 'https://example.com/wp-admin/edit.php?post_type=post',
 				],
 			)
 			->andReturn( null );
-
 
 		$mock_boot->register_assets();
 
@@ -144,5 +143,4 @@ class BootTest extends TestCase {
 
 		$this->assertConditionsMet();
 	}
-
 }
