@@ -30,10 +30,10 @@ class TrashTest extends TestCase {
 	public function test_register_route() {
 		WP_Mock::userFunction( 'register_rest_route' )
 			->andReturnUsing(
-				function ( $namespace, $route, $args ) {
+				function ( $name_space, $route, $args ) {
 					$validate = $args['args']['id']['validate_callback'];
 
-					$this->assertSame( 'tpbe/v1', $namespace );
+					$this->assertSame( 'tpbe/v1', $name_space );
 					$this->assertSame( '/trash', $route );
 					$this->assertSame( WP_REST_Server::CREATABLE, $args['methods'] );
 					$this->assertSame( 'absint', $args['args']['id']['sanitize_callback'] );

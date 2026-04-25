@@ -50,8 +50,8 @@ class BootTest extends TestCase {
 				]
 			);
 
-		global $wpVersion;
-		$wpVersion = '';
+		global $wp_version;
+		$wp_version = '';
 
 		WP_Mock::userFunction( 'plugins_url' )
 			->with( 'trash-post-in-block-editor/dist/app.js' )
@@ -112,7 +112,7 @@ class BootTest extends TestCase {
 				'trash-post-in-block-editor',
 				'tpbe',
 				[
-					'wpVersion' => $wpVersion,
+					'wpVersion' => $wp_version,
 					'url'       => 'https://example.com/wp-admin/edit.php?post_type=post',
 				],
 			)
