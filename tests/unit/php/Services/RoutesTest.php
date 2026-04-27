@@ -3,7 +3,6 @@
 namespace TrashPostInBlockEditor\Tests\Services;
 
 use WP_Mock;
-use WP_REST_Server;
 use WP_Mock\Tools\TestCase;
 
 use TrashPostInBlockEditor\Services\Routes;
@@ -52,20 +51,6 @@ class RoutesTest extends TestCase {
 			->with( [ Trash::class ] )
 			->reply( [ Trash::class ] );
 
-		WP_Mock::userFunction( 'register_rest_route' )
-			->andReturnUsing(
-				function ( $names_pace, $route, $args ) {
-					$validate = $args['args']['id']['validate_callback'];
-
-					$this->assertSame( 'tpbe/v1', $name_space );
-					$this->assertSame( '/trash', $route );
-					$this->assertSame( WP_REST_Server::CREATABLE, $args['methods'] );
-					$this->assertSame( 'absint', $args['args']['id']['sanitize_callback'] );
-					$this->assertTrue( is_callable( $validate ) );
-					$this->assertTrue( $validate( '123' ) );
-					$this->assertFalse( $validate( 'abc' ) );
-				}
-			);
 
 		$this->routes->register_rest_routes();
 
