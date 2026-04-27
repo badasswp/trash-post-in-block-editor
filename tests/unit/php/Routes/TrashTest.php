@@ -93,14 +93,16 @@ class TrashTest extends TestCase {
 			->once()
 			->andReturn( true );
 
+		$response = Mockery::mock( WP_REST_Response::class )->makePartial();
+		
 		WP_Mock::userFunction( 'rest_ensure_response' )
 			->with( [ 'ID' => 1 ] )
 			->once()
-			->andReturn( [ 'ID' => 1 ] );
+			->andReturn( $response );
 
 		$response = $this->trash->get_rest_response( $request );
 
-		$this->assertSame( [ 'ID' => 1 ], $response );
+		$this->assertInstanceOf( WP_REST_Response::class, $response );
 		$this->assertConditionsMet();
 	}
 }
