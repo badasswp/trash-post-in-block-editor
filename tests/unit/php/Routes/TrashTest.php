@@ -7,6 +7,7 @@ use WP_Mock;
 use WP_Error;
 use WP_REST_Server;
 use WP_REST_Request;
+use WP_REST_Response;
 use WP_Mock\Tools\TestCase;
 use TrashPostInBlockEditor\Routes\Trash;
 
