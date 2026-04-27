@@ -31,9 +31,7 @@ class Trash extends Route implements Router {
 			[
 				'args'                => [
 					'id' => [
-						'validate_callback' => function ( $param ) {
-							return is_numeric( $param );
-						},
+						'validate_callback' => 'is_numeric',
 						'sanitize_callback' => 'absint',
 					],
 				],
