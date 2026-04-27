@@ -3,7 +3,6 @@
 namespace TrashPostInBlockEditor\Tests\Services;
 
 use WP_Mock;
-use WP_REST_Server;
 use WP_Mock\Tools\TestCase;
 use Mockery;
 

@@ -7,6 +7,7 @@ use WP_Mock;
 use WP_Error;
 use WP_REST_Server;
 use WP_REST_Request;
+use WP_REST_Response;
 use WP_Mock\Tools\TestCase;
 use TrashPostInBlockEditor\Routes\Trash;
 
@@ -29,19 +30,22 @@ class TrashTest extends TestCase {
 
 	public function test_register_route() {
 		WP_Mock::userFunction( 'register_rest_route' )
-			->andReturnUsing(
-				function ( $name_space, $route, $args ) {
-					$validate = $args['args']['id']['validate_callback'];
-
-					$this->assertSame( 'tpbe/v1', $name_space );
-					$this->assertSame( '/trash', $route );
-					$this->assertSame( WP_REST_Server::CREATABLE, $args['methods'] );
-					$this->assertSame( 'absint', $args['args']['id']['sanitize_callback'] );
-					$this->assertTrue( is_callable( $validate ) );
-					$this->assertTrue( $validate( '123' ) );
-					$this->assertFalse( $validate( 'abc' ) );
-				}
-			);
+			->with(
+				'tpbe/v1',
+				'/trash',
+				[
+					'args'                => [
+						'id' => [
+							'validate_callback' => 'is_numeric',
+							'sanitize_callback' => 'absint',
+						],
+					],
+					'methods'             => 'POST',
+					'callback'            => [ $this->trash, 'get_rest_response' ],
+					'permission_callback' => [ $this->trash, 'is_user_permissible' ],
+				]
+			)
+			->andReturn( null );
 
 		$this->trash->register_route();
 
@@ -90,14 +94,16 @@ class TrashTest extends TestCase {
 			->once()
 			->andReturn( true );
 
+		$response = Mockery::mock( WP_REST_Response::class )->makePartial();
+		
 		WP_Mock::userFunction( 'rest_ensure_response' )
 			->with( [ 'ID' => 1 ] )
 			->once()
-			->andReturn( [ 'ID' => 1 ] );
+			->andReturn( $response );
 
 		$response = $this->trash->get_rest_response( $request );
 
-		$this->assertSame( [ 'ID' => 1 ], $response );
+		$this->assertInstanceOf( WP_REST_Response::class, $response );
 		$this->assertConditionsMet();
 	}
 }
