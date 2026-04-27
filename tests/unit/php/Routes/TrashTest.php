@@ -95,7 +95,7 @@ class TrashTest extends TestCase {
 			->andReturn( true );
 
 		$response = Mockery::mock( WP_REST_Response::class )->makePartial();
-		
+
 		WP_Mock::userFunction( 'rest_ensure_response' )
 			->with( [ 'ID' => 1 ] )
 			->once()
