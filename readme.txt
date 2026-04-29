@@ -1,5 +1,5 @@
 === Trash Post in Block Editor ===
-Contributors: badasswp
+Contributors: badasswp, activist507
 Tags: delete, trash, post, block, editor.
 Requires at least: 6.6
 Tested up to: 6.9
