@@ -59,7 +59,7 @@ jobs:
 
       - name: Run PHP Unit Tests
         run: |
-          # composer run test
+          composer run test
 
       - name: Set Git identity
         run: |
