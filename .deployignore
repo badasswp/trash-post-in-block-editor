@@ -18,3 +18,4 @@ src
 tests
 bin
 phpcs.xml
+phpunit.xml
