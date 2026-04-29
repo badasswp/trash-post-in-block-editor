@@ -2,6 +2,8 @@ name: TrashPostInBlockEditor CI
 
 on:
   push:
+    branches-ignore:
+      - release-*
 
 permissions:
   contents: write
