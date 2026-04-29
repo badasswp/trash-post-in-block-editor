@@ -4,6 +4,7 @@
 * Feat: Added language translations for the following `Japanese` ,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
 * Chore: Modify Shortcut command - CMD + Shift + Delete (backspace).
 * Chore: Added a pull request template file.
+* Test: Update PHP unit tests.
 
 ## 1.1.1
 * Use Composer for plugin setup.
