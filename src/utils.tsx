@@ -57,31 +57,31 @@ export const getShortcut = (): { modifier: string; character: string } => {
 	const options = {
 		CMD: {
 			modifier: 'primary',
-			character: 'v',
+			character: 'Backspace',
 		},
 		SHIFT: {
 			modifier: 'primaryShift',
-			character: 'v',
+			character: 'Backspace',
 		},
 		ALT: {
 			modifier: 'primaryAlt',
-			character: 'v',
+			character: 'Backspace',
 		},
 	};
 
 	/**
 	 * Filter Keyboard Shortcut.
 	 *
-	 * By default the passed option would be SHIFT which
-	 * represents `CMD + SHIFT + V`.
+	 * By default the passed option would be CMD which
+	 * represents `CMD + Shift + Delete (Backspace)`.
 	 *
 	 * @since 1.0.5
 	 *
 	 * @param {Object} Shortcut Option.
 	 * @return {Object}
 	 */
-	return applyFilters(
-		'trash-post-in-block-editor.keyboardShortcut',
-		options.SHIFT
-	) as { modifier: string; character: string };
+	return applyFilters( 'tpbe.keyboardShortcut', options.SHIFT ) as {
+		modifier: string;
+		character: string;
+	};
 };

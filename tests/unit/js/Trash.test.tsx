@@ -1,14 +1,14 @@
 import { render, fireEvent } from '@testing-library/react';
 
-import TrashPostInBlockEditor from '../../src/index';
-import { trashPost } from '../../src/utils';
+import TrashPostInBlockEditor from '../../../src/index';
+import { trashPost } from '../../../src/utils';
 
-jest.mock( '../../src/utils', () => ( {
+jest.mock( '../../../src/utils', () => ( {
 	trashPost: jest.fn(),
 } ) );
 
-jest.mock( '../../src/components/Shortcut', () => ( {
-	Shortcut: ( { onKeyDown } ) => {
+jest.mock( '../../../src/components/Shortcut', () => ( {
+	Shortcut: ( { onKeyDown }: { onKeyDown?: () => void } ) => {
 		onKeyDown = jest.fn();
 		onKeyDown?.();
 		return null;
@@ -17,7 +17,7 @@ jest.mock( '../../src/components/Shortcut', () => ( {
 
 describe( 'TrashPostInBlockEditor', () => {
 	beforeEach( () => {
-		global.tpbe = {
+		( globalThis as any ).tpbe = {
 			wpVersion: '6.6',
 			url: 'https://example.com/wp-admin/edit.php',
 		};
