@@ -31,7 +31,7 @@ class Trash extends Route implements Router {
 			[
 				'args'                => [
 					'id' => [
-						'validate_callback' => 'is_numeric',
+						'validate_callback' => [ $this, 'validate_numeric' ],
 						'sanitize_callback' => 'absint',
 					],
 				],
@@ -80,5 +80,18 @@ class Trash extends Route implements Router {
 				'ID' => $post_id,
 			]
 		);
+	}
+
+	/**
+	 * Validate numeric REST parameter.
+	 *
+	 * @param mixed            $value   Value to validate.
+	 * @param \WP_REST_Request $request Full REST request object.
+	 * @param string           $param   Parameter name.
+	 *
+	 * @return bool Whether the value is valid.
+	 */
+	public function validate_numeric( $value, $request, $param ) {
+		return is_numeric( $value );
 	}
 }
