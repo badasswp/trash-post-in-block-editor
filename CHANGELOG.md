@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.1
+* Hotfix: Resolve issue with `validate_callback` method: `is_numeric`.
+
 ## 1.2.0
 * Feat: Added language translations for the following `Japanese` ,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
 * Chore: Modify Shortcut command - CMD + Shift + Delete (backspace).
