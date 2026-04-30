@@ -14,6 +14,7 @@ use TrashPostInBlockEditor\Routes\Trash;
 /**
  * @covers TrashPostInBlockEditor\Routes\Trash::register_route
  * @covers TrashPostInBlockEditor\Routes\Trash::get_rest_response
+ * @covers TrashPostInBlockEditor\Routes\Trash::validate_numeric
  */
 class TrashTest extends TestCase {
 	public Trash $trash;
