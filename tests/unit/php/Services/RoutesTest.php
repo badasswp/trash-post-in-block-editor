@@ -59,7 +59,7 @@ class RoutesTest extends TestCase {
 				[
 					'args'                => [
 						'id' => [
-							'validate_callback' => 'is_numeric',
+							'validate_callback' => [ $trash, 'validate_numeric' ],
 							'sanitize_callback' => 'absint',
 						],
 					],

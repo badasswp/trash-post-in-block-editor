@@ -3,7 +3,7 @@ Contributors: badasswp, activist507
 Tags: delete, trash, post, block, editor.
 Requires at least: 6.6
 Tested up to: 6.9
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,9 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 3. Yes/No Prompt - Delete Post from within the WP Block Editor.
 
 == Changelog ==
+
+= 1.2.1 =
+* Hotfix: Resolve issue with `validate_callback` method: `is_numeric`.
 
 = 1.2.0 =
 * Feat: Added language translations for the following `Japanese` ,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
