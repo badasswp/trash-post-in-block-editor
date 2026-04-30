@@ -36,7 +36,7 @@ class TrashTest extends TestCase {
 				[
 					'args'                => [
 						'id' => [
-							'validate_callback' => 'is_numeric',
+							'validate_callback' => [ $this->trash, 'validate_numeric' ],
 							'sanitize_callback' => 'absint',
 						],
 					],
@@ -104,6 +104,16 @@ class TrashTest extends TestCase {
 		$response = $this->trash->get_rest_response( $request );
 
 		$this->assertInstanceOf( WP_REST_Response::class, $response );
+		$this->assertConditionsMet();
+	}
+
+	public function test_validate_numeric() {
+		$request = Mockery::mock( WP_REST_Request::class )->makePartial();
+		$request->shouldAllowMockingProtectedMethods();
+
+		$response = $this->trash->validate_numeric( 1, $request, 'id' );
+
+		$this->assertTrue( $response );
 		$this->assertConditionsMet();
 	}
 }
